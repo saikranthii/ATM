@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-background">
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <button onclick="window.location.href='index.html'" class="btn btn-home">Home</button>
+            <button onclick="history.back()" class="btn btn-back">Back</button>
+        </div>
+        <div class="nav-right">
+            <button id="profile-btn" class="profile-btn" onclick="toggleProfileDropdown()">AD</button>
+            <div id="profile-dropdown" class="profile-dropdown hidden">
+                <h3>Admin Profile</h3>
+                <form onsubmit="updateAdminProfile(event)" class="profile-form">
+                    <div class="form-group">
+                        <label for="profile-name">Name</label>
+                        <input type="text" id="profile-name" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-bank-id">Bank ID</label>
+                        <input type="text" id="profile-bank-id" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-location">Location</label>
+                        <input type="text" id="profile-location" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-password">New Password</label>
+                        <input type="password" id="profile-password" autocomplete="off" placeholder="Leave blank to keep current">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+                <button onclick="logout()" class="btn btn-danger">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <div class="card">
+            <h2>Create User & Account</h2>
+            <form onsubmit="createUser(event)" class="form-grid">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="card_number">Card Number</label>
+                    <input type="text" id="card_number" class="card-number" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="pin">PIN</label>
+                    <input type="text" id="pin" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="account_number">Account Number</label>
+                    <input type="text" id="account_number" class="account-number" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="bank_name">Bank Name</label>
+                    <input type="text" id="bank_name" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="branch">Branch</label>
+                    <input type="text" id="branch" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="balance">Balance</label>
+                    <input type="number" id="balance" autocomplete="off" required>
+                </div>
+                <button type="submit" class="btn btn-secondary">Create Account</button>
+            </form>
+            <p id="message" class="mt-4 error-message"></p>
+            <div id="users-container" class="users-container">
+                <table class="data-table" id="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Card Number</th>
+                            <th>PIN</th>
+                            <th>Account Number</th>
+                            <th>Balance</th>
+                            <th>Bank Name</th>
+                            <th>Branch</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

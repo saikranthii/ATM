@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h1>Admin Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="adminLogin()">Login</button>
+        <div id="message"></div>
+        
+        <div id="user-management" style="display: none;">
+            <h2>User Management</h2>
+            <div>
+                <h3>Create User</h3>
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="phone" placeholder="Phone (10 digits)">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="card_number" placeholder="Card Number (16 digits)">
+                <input type="text" id="pin" placeholder="PIN (4 digits)">
+                <input type="text" id="account_number" placeholder="Account Number">
+                <input type="text" id="bank_name" placeholder="Bank Name">
+                <input type="text" id="branch" placeholder="Branch">
+                <input type="number" id="balance" placeholder="Initial Balance">
+                <button onclick="createUser()">Create User</button>
+            </div>
+            <div>
+                <h3>Users List</h3>
+                <table id="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Card Number</th>
+                            <th>PIN</th>
+                            <th>Account Number</th>
+                            <th>Balance</th>
+                            <th>Bank Name</th>
+                            <th>Branch</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

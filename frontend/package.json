@@ -1,0 +1,14 @@
+{
+       "name": "atm-frontend",
+       "version": "1.0.0",
+       "description": "Frontend for ATM system",
+       "main": "frontend-server.js",
+       "scripts": {
+         "start": "node frontend-server.js"
+       },
+       "dependencies": {
+         "express": "^4.21.1"
+       },
+       "author": "",
+       "license": "ISC"
+     }

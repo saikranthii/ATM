@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Operations</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body class="bg-background centered">
+    <!-- Card Insertion Modal -->
+    <div id="card-modal" class="modal">
+        <div class="modal-content">
+            <h2>Card Insertion</h2>
+            <form onsubmit="validateCard(event)">
+                <div class="form-group">
+                    <label for="card_number">Card Number</label>
+                    <input type="text" id="card_number" class="card-number" placeholder="Enter 16-digit card number" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Validate Card</button>
+                <button type="button" onclick="hideCardModal()" class="btn btn-danger w-full mt-2">Cancel</button>
+            </form>
+            <p id="card-message" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- PIN Validation Modal -->
+    <div id="pin-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Enter PIN</h2>
+            <form onsubmit="validatePin(event)">
+                <div class="form-group">
+                    <label for="pin">PIN</label>
+                    <input type="password" id="pin" placeholder="Enter 4-digit PIN" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Confirm</button>
+                <button type="button" onclick="hidePinModal()" class="btn btn-danger w-full mt-2">Cancel</button>
+            </form>
+            <p id="pin-message" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="card w-full max-w-3xl">
+        <h1>ATM Operations</h1>
+        <div id="welcome-message" class="hidden text-center mb-4 text-xl font-semibold text-blue-300"></div>
+        <div id="operations-container" class="operation-grid hidden">
+            <button onclick="selectOperation('balance')" class="btn btn-primary">Balance Inquiry</button>
+            <button onclick="selectOperation('withdraw')" class="btn btn-primary">Cash Withdrawal</button>
+            <button onclick="selectOperation('deposit')" class="btn btn-primary">Cash Deposit</button>
+            <button onclick="selectOperation('statement')" class="btn btn-primary">Mini Statement</button>
+            <button onclick="selectOperation('transfer')" class="btn btn-primary">Fund Transfer</button>
+            <button onclick="selectOperation('pin-change')" class="btn btn-primary">PIN Change</button>
+            <button onclick="selectOperation('upi-transfer')" class="btn btn-primary">UPI Transfer</button>
+        </div>
+        <div id="operation-result" class="mt-4"></div>
+        <button onclick="window.location.href='index.html'" class="btn btn-home w-full mt-4">Logout</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

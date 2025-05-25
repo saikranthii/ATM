@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-background centered">
+    <div class="card w-full max-w-md">
+        <h1>ATM Login</h1>
+        <form onsubmit="validateCard(event)">
+            <div class="form-group">
+                <label for="card_number">Card Number</label>
+                <input type="text" id="card_number" class="card-number" value="1234 1234 1234 1234" required>
+            </div>
+            <div class="form-group">
+                <label for="pin">PIN</label>
+                <input type="password" id="pin" value="1234" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Validate</button>
+        </form>
+        <p id="message" class="error-message"></p>
+        <button onclick="window.location.href='index.html'" class="btn btn-home w-full mt-4">Back to Home</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

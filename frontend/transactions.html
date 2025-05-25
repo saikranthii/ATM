@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-background" onload="fetchStatement()">
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <button onclick="window.location.href='index.html'" class="btn btn-home">Home</button>
+            <button onclick="history.back()" class="btn btn-back">Back</button>
+        </div>
+        <div class="nav-right">
+            <button onclick="logout()" class="btn btn-danger">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Transaction History</h1>
+        <div class="card">
+            <h2>All Transactions</h2>
+            <table id="statement-table" class="data-table mt-4">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Recipient</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p id="message" class="mt-4 error-message"></p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
